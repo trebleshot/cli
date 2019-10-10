@@ -1,8 +1,0 @@
-/home/veli/Workspace/CLionProjects/links/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/veli/Workspace/CLionProjects/links/cmake-build-debug/CMakeFiles/links.dir
-/home/veli/Workspace/CLionProjects/links/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/veli/Workspace/CLionProjects/links/cmake-build-debug/CMakeFiles/links_autogen.dir
-/home/veli/Workspace/CLionProjects/links/cmake-build-debug/libs/coolsocket/CMakeFiles/rebuild_cache.dir
-/home/veli/Workspace/CLionProjects/links/cmake-build-debug/libs/coolsocket/CMakeFiles/coolsocket.dir
-/home/veli/Workspace/CLionProjects/links/cmake-build-debug/libs/coolsocket/CMakeFiles/edit_cache.dir
-/home/veli/Workspace/CLionProjects/links/cmake-build-debug/libs/coolsocket/CMakeFiles/coolsocket_autogen.dir

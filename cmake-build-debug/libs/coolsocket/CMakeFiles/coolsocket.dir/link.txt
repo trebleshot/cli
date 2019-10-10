@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC -g  -shared -Wl,-soname,libcoolsocket.so.0 -o libcoolsocket.so.0.1.0 CMakeFiles/coolsocket.dir/coolsocket_autogen/mocs_compilation.cpp.o CMakeFiles/coolsocket.dir/src/coolsocket.cpp.o /usr/lib/libQt5Network.so.5.13.1 /usr/lib/libQt5Core.so.5.13.1 
