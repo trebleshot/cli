@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/links.dir/links_autogen/mocs_compilation.cpp.o CMakeFiles/links.dir/src/main.cpp.o CMakeFiles/links.dir/src/comm_service.cpp.o  -o links -Wl,-rpath,/home/veli/Workspace/CLionProjects/links/cmake-build-debug/libs/coolsocket libs/coolsocket/libcoolsocket.so.0.1.0 /usr/lib/libQt5Network.so.5.13.1 /usr/lib/libQt5Core.so.5.13.1 

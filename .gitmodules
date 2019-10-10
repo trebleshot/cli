@@ -1,0 +1,3 @@
+[submodule "libs/coolsocket"]
+	path = libs/coolsocket
+	url = https://github.com/libcoolsocket/qt5.git

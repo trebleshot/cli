@@ -1,0 +1,3 @@
+# Hashes of file build rules.
+507135ec98b617e474e28e0b95a2a1e5 CMakeFiles/links_autogen
+a85368ca4555fc7282d705290f5d339c libs/coolsocket/CMakeFiles/coolsocket_autogen
