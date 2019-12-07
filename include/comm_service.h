@@ -30,8 +30,6 @@ namespace CoolSocket {
 }
 
 namespace Links {
-	class Connection;
-
 	class Delegate;
 }
 
@@ -40,15 +38,14 @@ Q_OBJECT
 
 	CoolSocket::Server m_server;
 
+	void serve(QTcpSocket* socket) const;
+
 public:
 	explicit Delegate(quint16 port, QObject *parent = nullptr);
+
+	int run();
 
 public slots:
 
 	void acceptConnection();
-};
-
-class Links::Connection : public QThread {
-Q_OBJECT
-
 };

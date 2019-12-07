@@ -17,6 +17,7 @@
 */
 
 #include <comm_service.h>
+#include <QtCore/QCoreApplication>
 
 namespace CoolSocket {
 	const quint16 DEFAULT_PORT = 4632;
@@ -26,12 +27,23 @@ void Links::Delegate::acceptConnection()
 {
 	QTcpSocket *socket = m_server.nextPendingConnection();
 
-	if (socket == nullptr)
-		return;
+	if (socket != nullptr) {
+		serve(socket);
+	} else
+		qWarning() << "acceptConnection failed with nullptr connection";
+}
 
-	qDebug() << "New connection request from" << socket->peerAddress();
+Links::Delegate::Delegate(quint16 port, QObject *parent)
+		: QObject(parent), m_server(QHostAddress("0.0.0.0"), port)
+{
+	QObject::connect(&m_server, &CoolSocket::Server::newConnection, this, &Delegate::acceptConnection);
+}
 
+void Links::Delegate::serve(QTcpSocket *socket) const
+{
 	CoolSocket::Connection connection(socket);
+
+	qDebug() << "New connection request from" << connection.socket()->peerAddress();
 
 	const auto &response = connection.receive();
 
@@ -40,11 +52,12 @@ void Links::Delegate::acceptConnection()
 	connection.reply(response.msg);
 }
 
-Links::Delegate::Delegate(quint16 port, QObject *parent)
-		: QObject(parent), m_server(QHostAddress("0.0.0.0"), port)
+int Links::Delegate::run()
 {
-	QObject::connect(&m_server, &CoolSocket::Server::newConnection, this, &Delegate::acceptConnection);
-	m_server.start();
+	if (m_server.start()) {
+		qInfo() << "Waiting for connections on" << m_server.port();
+		return QCoreApplication::exec();
+	}
 
-	qInfo() << "Waiting for connections on" << port;
+	return -1;
 }

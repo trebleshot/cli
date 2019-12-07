@@ -27,7 +27,7 @@ int main(int argc, char **argv)
 
 		if (port <= 65535 && port >= 0 && portValid) {
 			Links::Delegate delegate(port);
-			return QCoreApplication::exec();
+			return delegate.run();
 		} else
 			qCritical("The port number you entered is not valid.");
 	}
